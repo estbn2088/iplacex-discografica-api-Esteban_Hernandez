@@ -1,5 +1,5 @@
 # STAGE 1
-FROM gradle:jdk21 as builder
+FROM gradle:jdk21 AS builder
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY src ./src
 RUN gradle build --no-daemon
 
 # STAGE 2
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
